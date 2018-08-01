@@ -2,7 +2,7 @@ package com.brothersoft.domain.entity;
 
 import java.util.List;
 
-public class Country {
+public class Country implements DomainModel{
     private String name;
     private List<String> topLevelDomain;
     private String alpha2Code;
@@ -24,7 +24,7 @@ public class Country {
     private List<Currency> currencies;
     private List<Language> languages;
     private Translation translations;
-    private String flag;
+    private String flagsURL;
     private List<RegionalBlock> regionalBlocs;
     private String cioc;
 
@@ -196,12 +196,12 @@ public class Country {
         this.translations = translations;
     }
 
-    public String getFlag() {
-        return flag;
+    public String getFlagsURL() {
+        return flagsURL;
     }
 
-    public void setFlag(String flag) {
-        this.flag = flag;
+    public void setFlagsURL(String flagsURL) {
+        this.flagsURL = flagsURL;
     }
 
     public List<RegionalBlock> getRegionalBlocs() {

@@ -20,8 +20,8 @@ public class CountryRepositoryImpl implements CountryRepository {
 
 
     @Override
-    public Observable<List<Country>> getCountries() {
-        return null;
+    public Observable<List<Country>> getAllCountries() {
+        return restService.getAllCountries();
     }
 
     @Override

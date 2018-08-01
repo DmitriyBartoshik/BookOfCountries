@@ -6,4 +6,5 @@ public class CountryListRouter extends BaseRouter<CountryListActivity> {
     public CountryListRouter(CountryListActivity activity) {
         super(activity);
     }
+
 }

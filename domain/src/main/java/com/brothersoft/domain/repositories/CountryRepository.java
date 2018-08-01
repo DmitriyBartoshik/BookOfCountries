@@ -10,7 +10,7 @@ import io.reactivex.Observable;
 
 public interface CountryRepository {
 
-    Observable<List<Country>> getCountries();
+    Observable<List<Country>> getAllCountries();
     Observable<Country> getCountry();
 
 //    Observable<List<Country>> search(Search search);

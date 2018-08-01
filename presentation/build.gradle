@@ -26,6 +26,11 @@ dependencies {
     //View
     implementation "com.android.support:appcompat-v7:$supportVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintVersion"
+    implementation "com.android.support:recyclerview-v7:$supportVersion"
+    implementation "com.android.support:cardview-v7:$supportVersion"
+
+    //Android SVG Loader
+    implementation "com.github.ar-android:AndroidSvgLoader:$svgLoader"
 
     //Rx
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
@@ -43,4 +48,8 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
 
     implementation project(path: ':data')
+
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }
