@@ -7,4 +7,10 @@ public class CountryListRouter extends BaseRouter<CountryListActivity> {
         super(activity);
     }
 
+
+
+    public void goToCountryDetails(){
+
+    }
+
 }

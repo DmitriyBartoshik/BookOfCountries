@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.brothersoft.bookofcountries">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -20,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".presentation.screens.country.single.CountryActivity"></activity>
     </application>
 
 </manifest>

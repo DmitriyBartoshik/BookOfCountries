@@ -22,7 +22,6 @@ android {
 }
 
 dependencies {
-
     //View
     implementation "com.android.support:appcompat-v7:$supportVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintVersion"
@@ -38,9 +37,9 @@ dependencies {
     // Arch
     implementation "android.arch.lifecycle:extensions:$archVersion"
     implementation "android.arch.lifecycle:viewmodel:$archVersion"
-//    implementation "android.arch.lifecycle:common-java8:$archVersion"
 
     //Binding
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     annotationProcessor "com.android.databinding:compiler:$bindingVersion"
 
     //Dagger
@@ -48,8 +47,5 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
 
     implementation project(path: ':data')
-
-
-    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }

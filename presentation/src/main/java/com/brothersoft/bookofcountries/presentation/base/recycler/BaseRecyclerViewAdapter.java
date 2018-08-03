@@ -36,6 +36,13 @@ public abstract class BaseRecyclerViewAdapter<
         notifyDataSetChanged();
     }
 
+
+    public List<Entity> getItems(){
+        return  items;
+    }
+
+//    public Entity getItem
+
     public void removeItem(Entity entity) {
         int index = this.items.indexOf(entity);
         this.items.remove(index);

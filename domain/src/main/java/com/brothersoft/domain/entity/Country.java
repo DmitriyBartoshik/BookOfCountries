@@ -24,7 +24,7 @@ public class Country implements DomainModel{
     private List<Currency> currencies;
     private List<Language> languages;
     private Translation translations;
-    private String flagsURL;
+    private String flag;
     private List<RegionalBlock> regionalBlocs;
     private String cioc;
 
@@ -196,12 +196,12 @@ public class Country implements DomainModel{
         this.translations = translations;
     }
 
-    public String getFlagsURL() {
-        return flagsURL;
+    public String getFlag() {
+        return flag;
     }
 
-    public void setFlagsURL(String flagsURL) {
-        this.flagsURL = flagsURL;
+    public void setFlag(String flag) {
+        this.flag = flag;
     }
 
     public List<RegionalBlock> getRegionalBlocs() {

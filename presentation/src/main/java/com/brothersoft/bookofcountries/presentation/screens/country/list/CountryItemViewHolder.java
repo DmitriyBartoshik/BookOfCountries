@@ -8,6 +8,7 @@ import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewHo
 import com.brothersoft.domain.entity.Country;
 
 public class CountryItemViewHolder extends BaseItemViewHolder<Country, CountryItemViewModel, ItemCountryBinding> {
+    public static CountryItemViewHolder countryItemViewHolder;
 
     public CountryItemViewHolder(CountryItemViewModel viewModel, ItemCountryBinding binding) {
         super(viewModel, binding);
@@ -16,6 +17,15 @@ public class CountryItemViewHolder extends BaseItemViewHolder<Country, CountryIt
     public static CountryItemViewHolder create(ViewGroup parent, CountryItemViewModel viewModel) {
         ItemCountryBinding binding = ItemCountryBinding.inflate(LayoutInflater.from(parent.getContext()),
                 parent, false);
-        return  new CountryItemViewHolder(viewModel, binding);
+        return new CountryItemViewHolder(viewModel, binding);
+    }
+
+    @Override
+    public CountryItemViewModel getViewModel() {
+        return super.getViewModel();
+    }
+
+    public static CountryItemViewHolder getViewHolder() {
+        return countryItemViewHolder;
     }
 }
