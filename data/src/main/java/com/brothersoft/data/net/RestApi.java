@@ -6,6 +6,7 @@ import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface RestApi {
 
@@ -25,7 +26,8 @@ public interface RestApi {
 //    Completable deleteUser(@Path("id") String id);
 
     @GET("all")
-    Observable<List<Country>>getAllCountries();
-    @GET("///")
-    Observable<Country>getCountry();
+    Observable<List<Country>> getAllCountries();
+
+    @GET("alpha/{alpha3Code}")
+    Observable<Country> getCountry(@Path("alpha3Code") String name);
 }

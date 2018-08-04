@@ -1,7 +1,9 @@
 package com.brothersoft.bookofcountries.injection;
 
 
+import com.brothersoft.bookofcountries.presentation.screens.country.group.CountryGroupViewModel;
 import com.brothersoft.bookofcountries.presentation.screens.country.list.CountryListViewModel;
+import com.brothersoft.bookofcountries.presentation.screens.country.single.CountryViewModel;
 
 import javax.inject.Singleton;
 
@@ -11,5 +13,6 @@ import dagger.Component;
 @Singleton
 public interface AppComponent {
     void runInject(CountryListViewModel listViewModel);
-
+    void runInject(CountryViewModel countryViewModel);
+    void runInject(CountryGroupViewModel countryGroupViewModel);
 }

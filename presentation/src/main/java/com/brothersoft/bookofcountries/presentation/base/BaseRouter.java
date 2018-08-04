@@ -22,13 +22,17 @@ public class BaseRouter<A extends BaseActivity> {
         activity.onBackPressed();
     }
 
+    public void finishActivity() {
+        activity.finish();
+    }
+
     public void showError(Throwable throwable) {
 
-        if(throwable instanceof Error) {
+        if (throwable instanceof Error) {
 
-            Error error = (Error)throwable;
+            Error error = (Error) throwable;
             switch (error.getType()) {
-                case INTERNET_IS_NOT_AVAILABLE:{
+                case INTERNET_IS_NOT_AVAILABLE: {
                     showTostError(R.string.error_internet_not_available);
                     break;
                 }

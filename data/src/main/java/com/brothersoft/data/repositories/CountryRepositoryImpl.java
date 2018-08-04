@@ -1,10 +1,13 @@
 package com.brothersoft.data.repositories;
 
+import android.util.Log;
+
 import com.brothersoft.data.net.RestService;
 import com.brothersoft.domain.entity.Country;
 import com.brothersoft.domain.repositories.CountryRepository;
 
 import java.util.List;
+
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
@@ -25,7 +28,8 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
     @Override
-    public Observable<Country> getCountry() {
-        return null;
+    public Observable<Country> getCountry(String alpha3Code) {
+
+        return restService.getCountry(alpha3Code);
     }
 }

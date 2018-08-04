@@ -27,8 +27,7 @@ public class RestService {
 
     private RestApi restApi;
     private Gson gson;
-    private static final String REQUEST_URL =
-            "https://restcountries.eu/rest/v2/";
+    private static final String REQUEST_URL = "https://restcountries.eu/rest/v2/";
     private ErrorParserTransformer errorParserTransformer;
 
 
@@ -59,17 +58,16 @@ public class RestService {
 
         errorParserTransformer = new ErrorParserTransformer(gson);
     }
+
     public Observable<List<Country>> getAllCountries() {
-        Log.d(TAG, "getAllCountries: ");
         return restApi
                 .getAllCountries();
 //                .compose(errorParserTransformer.<List<CountryResponse>, HttpError>parseHttpError());
     }
 
-    public Observable<Country> getUser(String id) {
-        Log.d(TAG, "getUser: ");
+    public Observable<Country> getCountry(String alpha3Code) {
         return restApi
-                .getCountry();
+                .getCountry(alpha3Code);
 //                .compose(errorParserTransformer.<UserResponse, HttpError>parseHttpError());
     }
 }

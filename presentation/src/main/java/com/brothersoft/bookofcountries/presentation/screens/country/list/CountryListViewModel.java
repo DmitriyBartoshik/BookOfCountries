@@ -1,5 +1,7 @@
 package com.brothersoft.bookofcountries.presentation.screens.country.list;
 
+import android.util.Log;
+
 import com.brothersoft.bookofcountries.app.App;
 import com.brothersoft.bookofcountries.presentation.base.BaseViewModel;
 import com.brothersoft.bookofcountries.presentation.base.recycler.ClickedItemModel;
@@ -27,6 +29,32 @@ public class CountryListViewModel extends BaseViewModel<CountryListRouter> {
     }
 
     CountryListViewModel() {
+        getCountryList();
+        adapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+            }
+
+            @Override
+            public void onNext(ClickedItemModel clickedItemModel) {
+                if (clickedItemModel.getEntity() instanceof Country) {
+                    String alpha3Code = ((Country) clickedItemModel.getEntity()).getAlpha3Code();
+                    router.goToCountryDetails(alpha3Code);
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+
+    public void getCountryList() {
         listCountryUseCase.getCountries().subscribe(new Observer<List<Country>>() {
             @Override
             public void onSubscribe(Disposable d) {
@@ -36,29 +64,6 @@ public class CountryListViewModel extends BaseViewModel<CountryListRouter> {
             @Override
             public void onNext(List<Country> countries) {
                 adapter.setItems(countries);
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        });
-        adapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-
-            }
-
-            @Override
-            public void onNext(ClickedItemModel clickedItemModel) {
-                if (clickedItemModel.getEntity() instanceof Country){
-
-                }
             }
 
             @Override

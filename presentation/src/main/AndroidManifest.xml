@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.screens.country.single.CountryActivity"></activity>
+        <activity android:name=".presentation.screens.country.single.CountryActivity" />
+        <activity android:name=".presentation.screens.country.group.CountryGroupActivity"></activity>
     </application>
 
 </manifest>
