@@ -70,4 +70,9 @@ public class RestService {
                 .getCountry(alpha3Code);
 //                .compose(errorParserTransformer.<UserResponse, HttpError>parseHttpError());
     }
+
+    public Observable<List<Country>> getRegionsCountries(String region) {
+        return restApi
+                .getRegionsCountries(region);
+    }
 }

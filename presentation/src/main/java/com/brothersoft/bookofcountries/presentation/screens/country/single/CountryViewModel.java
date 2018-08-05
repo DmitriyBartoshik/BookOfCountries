@@ -57,15 +57,14 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
         });
     }
 
-    public void ffff(){
-        String focusRegion=region.get();
-        router.goToRegionList(focusRegion);
-    }
-
     public void setCountryField(Country country) {
         this.name.set(country.getName());
         this.capital.set(country.getCapital());
         this.region.set(country.getRegion());
         this.flag.set(country.getFlag());
+    }
+    public void openRegionsCountries(){
+        String focusRegion=region.get();
+        router.goToRegionsCountries(focusRegion);
     }
 }
