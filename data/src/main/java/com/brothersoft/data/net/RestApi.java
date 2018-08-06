@@ -27,8 +27,9 @@ public interface RestApi {
 
     @GET("all")
     Observable<List<Country>> getAllCountries();
-    @GET("region/{region}")
-    Observable<List<Country>> getRegionsCountries(@Path("region") String region);
+
+    @GET("{field}/{fieldValue}")
+    Observable<List<Country>> getCountryGroupList(@Path("field") String field, @Path("fieldValue") String fieldValue);
 
     @GET("alpha/{alpha3Code}")
     Observable<Country> getCountry(@Path("alpha3Code") String name);

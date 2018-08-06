@@ -33,7 +33,7 @@ public class CountryRepositoryImpl implements CountryRepository {
         return restService.getCountry(alpha3Code);
     }
     @Override
-    public Observable<List<Country>> getRegionsCountries(String region){
-        return restService.getRegionsCountries(region);
+    public Observable<List<Country>> getCountryGroupList(String field,String fieldValue){
+        return restService.getCountryGroupList(field,fieldValue);
     }
 }

@@ -14,6 +14,6 @@ public class LanguageItemViewModel extends BaseItemViewModel<Language> {
 
     @Override
     public void setItem(Language language, int position) {
-        this.languageName.set(language.getIso639_1());
+        this.languageName.set(language.getName());
     }
 }

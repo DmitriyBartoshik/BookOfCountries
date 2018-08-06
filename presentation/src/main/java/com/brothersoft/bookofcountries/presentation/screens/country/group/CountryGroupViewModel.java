@@ -2,6 +2,7 @@ package com.brothersoft.bookofcountries.presentation.screens.country.group;
 
 import com.brothersoft.bookofcountries.app.App;
 import com.brothersoft.bookofcountries.presentation.base.BaseViewModel;
+import com.brothersoft.bookofcountries.presentation.base.recycler.ClickedItemModel;
 import com.brothersoft.bookofcountries.presentation.screens.country.list.CountryListAdapter;
 import com.brothersoft.domain.entity.Country;
 import com.brothersoft.domain.usecases.GetCountryGroupUseCase;
@@ -14,6 +15,9 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 public class CountryGroupViewModel extends BaseViewModel<CountryGroupRouter> {
+    public String field;
+    public String fieldValue;
+
     public CountryListAdapter adapter = new CountryListAdapter();
     @Inject
     public GetCountryGroupUseCase countryGroupUseCase;
@@ -23,8 +27,14 @@ public class CountryGroupViewModel extends BaseViewModel<CountryGroupRouter> {
         App.getAppComponent().runInject(this);
     }
 
-    public void getRegionsCountries(String region) {
-        countryGroupUseCase.getRegionsCountries(region).subscribe(new Observer<List<Country>>() {
+   public CountryGroupViewModel(){
+       adapterClickObserver();
+   }
+
+
+    public void getCountryGroupList(String field, String fieldValue) {
+        setField(field, fieldValue);
+        countryGroupUseCase.getCountryGroupList(field, fieldValue).subscribe(new Observer<List<Country>>() {
             @Override
             public void onSubscribe(Disposable d) {
 
@@ -45,7 +55,38 @@ public class CountryGroupViewModel extends BaseViewModel<CountryGroupRouter> {
 
             }
         });
+    }
+
+    public void setField(String field, String fieldValue) {
+        if (field.equals("lang")) {
+            field = "Language";
+        }
+        this.field = field;
+        this.fieldValue = fieldValue;
 
     }
+    public void adapterClickObserver(){
+        adapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+            }
+
+            @Override
+            public void onNext(ClickedItemModel clickedItemModel) {
+                if (clickedItemModel.getEntity() instanceof Country) {
+                    String alpha3Code = ((Country) clickedItemModel.getEntity()).getAlpha3Code();
+                    router.goToCountryDetails(alpha3Code);
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
 }
-// android:onClick="@{(v)->viewModel.itemClicked(v)}"

@@ -7,4 +7,8 @@ public class CountryGroupRouter extends BaseRouter<CountryGroupActivity> {
     public CountryGroupRouter(CountryGroupActivity activity) {
         super(activity);
     }
+
+    public void goToCountryDetails(String name) {
+        activity.startActivity(CountryActivity.getIntent(activity, name));
+    }
 }

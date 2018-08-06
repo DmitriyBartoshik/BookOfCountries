@@ -9,7 +9,7 @@ public class CountryRouter extends BaseRouter<CountryActivity> {
     }
 
 
-    public void goToRegionsCountries(String region) {
-        activity.startActivity(CountryGroupActivity.getIntent(activity, region));
+    public void goToCountryGroupList(String countryField,String countryFieldValue) {
+        activity.startActivity(CountryGroupActivity.getIntent(activity, countryField,countryFieldValue));
     }
 }

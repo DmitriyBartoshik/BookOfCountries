@@ -71,8 +71,8 @@ public class RestService {
 //                .compose(errorParserTransformer.<UserResponse, HttpError>parseHttpError());
     }
 
-    public Observable<List<Country>> getRegionsCountries(String region) {
+    public Observable<List<Country>> getCountryGroupList(String field,String fieldValue) {
         return restApi
-                .getRegionsCountries(region);
+                .getCountryGroupList(field,fieldValue);
     }
 }

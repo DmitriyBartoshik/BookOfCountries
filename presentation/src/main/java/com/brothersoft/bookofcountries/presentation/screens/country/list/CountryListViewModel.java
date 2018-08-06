@@ -30,28 +30,7 @@ public class CountryListViewModel extends BaseViewModel<CountryListRouter> {
 
     CountryListViewModel() {
         getCountryList();
-        adapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-            }
-
-            @Override
-            public void onNext(ClickedItemModel clickedItemModel) {
-                if (clickedItemModel.getEntity() instanceof Country) {
-                    String alpha3Code = ((Country) clickedItemModel.getEntity()).getAlpha3Code();
-                    router.goToCountryDetails(alpha3Code);
-                }
-            }
-
-            @Override
-            public void onError(Throwable e) {
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        });
+        adapterClickObserver();
     }
 
     public void getCountryList() {
@@ -69,6 +48,30 @@ public class CountryListViewModel extends BaseViewModel<CountryListRouter> {
             @Override
             public void onError(Throwable e) {
 
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+    public void adapterClickObserver(){
+        adapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+            }
+
+            @Override
+            public void onNext(ClickedItemModel clickedItemModel) {
+                if (clickedItemModel.getEntity() instanceof Country) {
+                    String alpha3Code = ((Country) clickedItemModel.getEntity()).getAlpha3Code();
+                    router.goToCountryDetails(alpha3Code);
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
             }
 
             @Override

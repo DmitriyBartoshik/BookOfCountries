@@ -13,6 +13,6 @@ public class CurrencyItemViewModel extends BaseItemViewModel<Currency> {
 
     @Override
     public void setItem(Currency currency, int position) {
-        this.currencyCode.set(currency.getCode());
+        this.currencyCode.set(currency.getName());
     }
 }

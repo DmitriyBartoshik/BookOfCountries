@@ -15,4 +15,5 @@ public class BindingAdapters {
                 .setPlaceHolder(R.mipmap.ic_launcher, R.mipmap.ic_launcher)
                 .load(url,view);
     }
+//    @BindingAdapter("android:")
 }

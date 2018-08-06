@@ -20,9 +20,9 @@ public class GetCountryGroupUseCase extends BaseUseCase {
         this.countryRepository = countryRepository;
     }
 
-    public Observable<List<Country>> getRegionsCountries(String region) {
+    public Observable<List<Country>> getCountryGroupList(String field,String fieldValue) {
         return countryRepository
-                .getRegionsCountries(region)
+                .getCountryGroupList(field,fieldValue)
                 .subscribeOn(executionThread)
                 .observeOn(postExecutionThread);
     }

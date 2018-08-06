@@ -11,22 +11,24 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.brothersoft.bookofcountries.R;
 import com.brothersoft.bookofcountries.databinding.ActivityCountryGroupBinding;
 import com.brothersoft.bookofcountries.presentation.base.BaseMvvmActivity;
-import com.brothersoft.bookofcountries.presentation.screens.country.single.CountryViewModel;
 
-import static com.brothersoft.bookofcountries.presentation.utils.Extras.EXTRA_COUNTRY_REGION;
+import static com.brothersoft.bookofcountries.presentation.utils.Extras.EXTRA_COUNTRY_FIELD;
+import static com.brothersoft.bookofcountries.presentation.utils.Extras.EXTRA_COUNTRY_FIELD_VALUES;
 
 public class CountryGroupActivity extends BaseMvvmActivity<CountryGroupViewModel,
         ActivityCountryGroupBinding, CountryGroupRouter> {
 
-    public static Intent getIntent(Activity activity, String region) {
+    public static Intent getIntent(Activity activity, String countryField, String countryFieldValues) {
         Intent intent = new Intent(activity, CountryGroupActivity.class);
-        intent.putExtra(EXTRA_COUNTRY_REGION, region);
+        intent.putExtra(EXTRA_COUNTRY_FIELD, countryField);
+        intent.putExtra(EXTRA_COUNTRY_FIELD_VALUES, countryFieldValues);
+
         return intent;
     }
 
     @Override
     protected CountryGroupViewModel provideViewModel() {
-        return  ViewModelProviders.of(this).get(CountryGroupViewModel.class);
+        return ViewModelProviders.of(this).get(CountryGroupViewModel.class);
     }
 
     @Override
@@ -42,11 +44,26 @@ public class CountryGroupActivity extends BaseMvvmActivity<CountryGroupViewModel
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String region = getIntent().getExtras().getString(EXTRA_COUNTRY_REGION);
-        viewModel.getRegionsCountries(region);
+        String field = getIntent().getExtras().getString(EXTRA_COUNTRY_FIELD);
+        String fieldValue = getIntent().getExtras().getString(EXTRA_COUNTRY_FIELD_VALUES);
+        viewModel.getCountryGroupList(field, fieldValue);
+        settingsAdapter();
+        settingsBackround(field);
+    }
+
+    public void settingsAdapter() {
         binding.countryList.setLayoutManager(new LinearLayoutManager(this));
         binding.countryList.setAdapter(viewModel.adapter);
         binding.countryList.setHasFixedSize(true);
+    }
+
+    public void settingsBackround(String field) {
+        if (field.equals("lang")) {
+            binding.headerCountryGroup.setBackground(getDrawable(R.drawable.international_trade));
+        }
+        if (field.equals("currency")) {
+            binding.headerCountryGroup.setBackground(getDrawable(R.drawable.currency_header));
+        }
     }
 }
 
