@@ -6,6 +6,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 
 import com.brothersoft.bookofcountries.R;
@@ -46,6 +47,9 @@ public class CountryActivity extends BaseMvvmActivity<CountryViewModel,
         if (alpha3Code != null) {
             viewModel.getCountry(alpha3Code);
         }
+        binding.countryLanguages.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        binding.countryLanguages.setAdapter(viewModel.languageListAdapter);
+        binding.countryLanguages.setHasFixedSize(true);
     }
 }
 

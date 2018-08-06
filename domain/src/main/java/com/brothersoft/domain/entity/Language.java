@@ -1,8 +1,12 @@
 package com.brothersoft.domain.entity;
 
-public class Language {
+public class Language implements DomainModel {
     private String iso639_1;
     private String iso639_2;
     private String name;
     private String nativeName;
+
+    public String getIso639_1() {
+        return iso639_1;
+    }
 }

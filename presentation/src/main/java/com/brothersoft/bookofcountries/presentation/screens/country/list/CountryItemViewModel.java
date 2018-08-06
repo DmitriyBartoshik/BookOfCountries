@@ -11,8 +11,8 @@ public class CountryItemViewModel extends BaseItemViewModel<Country> {
     public ObservableField<String> region = new ObservableField<>("");
     public ObservableField<String> flag = new ObservableField<>("");
 
-    public int position = 0;
     public Country country;
+    public int position = 0;
 
     @Override
     public void setItem(Country country, int position) {
