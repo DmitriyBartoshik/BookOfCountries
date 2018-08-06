@@ -7,13 +7,13 @@ import com.brothersoft.domain.entity.Country;
 import com.brothersoft.domain.entity.Language;
 
 public class LanguageItemViewModel extends BaseItemViewModel<Language> {
-    public ObservableField<String> nameIso639_1 = new ObservableField<>("");
+    public ObservableField<String> languageName = new ObservableField<>("");
 
     public Language language;
     public int position = 0;
 
     @Override
     public void setItem(Language language, int position) {
-        this.nameIso639_1.set(language.getIso639_1());
+        this.languageName.set(language.getIso639_1());
     }
 }

@@ -50,6 +50,10 @@ public class CountryActivity extends BaseMvvmActivity<CountryViewModel,
         binding.countryLanguages.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         binding.countryLanguages.setAdapter(viewModel.languageListAdapter);
         binding.countryLanguages.setHasFixedSize(true);
+
+        binding.countryCurrencies.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        binding.countryCurrencies.setAdapter(viewModel.currencyListAdapter);
+        binding.countryCurrencies.setHasFixedSize(true);
     }
 }
 
