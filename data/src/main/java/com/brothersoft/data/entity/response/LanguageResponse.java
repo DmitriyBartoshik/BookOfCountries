@@ -1,6 +1,8 @@
 package com.brothersoft.data.entity.response;
 
-public class LanguageResponse {
+import com.brothersoft.data.entity.DataModel;
+
+public class LanguageResponse implements DataModel {
     private String iso639_1;
     private String iso639_2;
     private String name;

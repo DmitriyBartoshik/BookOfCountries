@@ -39,41 +39,75 @@ public class CountryRepositoryImpl implements CountryRepository {
                 .map(new Function<List<CountryResponse>, List<Country>>() {
                     @Override
                     public List<Country> apply(List<CountryResponse> countryResponses) throws Exception {
-
-                        List<Country> list = new ArrayList<>();
+                        List<Country> countries = new ArrayList<>();
                         for (CountryResponse countryResponse : countryResponses) {
-                            Country country = new Country();
-                            country.setName(countryResponse.getName());
-                            country.setTopLevelDomain(countryResponse.getTopLevelDomain());
-                            country.setAlpha2Code(countryResponse.getAlpha2Code());
-                            country.setAlpha3Code(countryResponse.getAlpha3Code());
-                            country.setCallingCodes(countryResponse.getCallingCodes());
-                            country.setCapital(countryResponse.getCapital());
-                            country.setAltSpellings(countryResponse.getAltSpellings());
-                            country.setRegion(countryResponse.getRegion());
-                            country.setSubregion(countryResponse.getSubregion());
-                            country.setPopulation(countryResponse.getPopulation());
-                            country.setLatlng(countryResponse.getLatlng());
-                            country.setDemonym(countryResponse.getDemonym());
-                            country.setArea(countryResponse.getArea());
-                            country.setGini(countryResponse.getGini());
-                            country.setTimezones(countryResponse.getTimezones());
-                            country.setBorders(countryResponse.getBorders());
-                            country.setNativeName(countryResponse.getNativeName());
-                            country.setNumericCode(countryResponse.getNumericCode());
-                            country.setFlag(countryResponse.getFlag());
-                            country.setCioc(countryResponse.getCioc());
-                            country.setCurrencies(getCurrencies(countryResponse.getCurrencies()));
-                            country.setLanguages(getLanguages(countryResponse.getLanguages()));
-                            country.setTranslations(getTranslations(countryResponse.getTranslations()));
-                            country.setRegionalBlocs(getRegionalBlocks(countryResponse.getRegionalBlocs()));
+                            Country country = getCountry(countryResponse);
+                            countries.add(country);
                         }
-                        return list;
+                        return countries;
                     }
                 });
     }
 
-    public List<Currency> getCurrencies(List<CurrencyResponse> currencyResponses) {
+    @Override
+    public Observable<List<Country>> getCountryGroupList(String field, String fieldValue) {
+        return restService.getCountryGroupList(field, fieldValue)
+                .map(new Function<List<CountryResponse>, List<Country>>() {
+                    @Override
+                    public List<Country> apply(List<CountryResponse> countryResponses) throws Exception {
+                        List<Country> countries = new ArrayList<>();
+                        for (CountryResponse countryResponse : countryResponses) {
+                            Country country = getCountry(countryResponse);
+                            countries.add(country);
+                        }
+                        return countries;
+                    }
+                });
+    }
+
+    @Override
+    public Observable<Country> getCountry(String alpha3Code) {
+
+        return restService.getCountry(alpha3Code)
+                .map(new Function<CountryResponse, Country>() {
+                    @Override
+                    public Country apply(CountryResponse countryResponse) throws Exception {
+                        Country country=getCountry(countryResponse);
+                        return country;
+                    }
+                });
+    }
+
+    public Country getCountry(CountryResponse countryResponse) {
+        Country country = new Country();
+        country.setName(countryResponse.getName());
+        country.setTopLevelDomain(countryResponse.getTopLevelDomain());
+        country.setAlpha2Code(countryResponse.getAlpha2Code());
+        country.setAlpha3Code(countryResponse.getAlpha3Code());
+        country.setCallingCodes(countryResponse.getCallingCodes());
+        country.setCapital(countryResponse.getCapital());
+        country.setAltSpellings(countryResponse.getAltSpellings());
+        country.setRegion(countryResponse.getRegion());
+        country.setSubregion(countryResponse.getSubregion());
+        country.setPopulation(countryResponse.getPopulation());
+        country.setLatlng(countryResponse.getLatlng());
+        country.setDemonym(countryResponse.getDemonym());
+        country.setArea(countryResponse.getArea());
+        country.setGini(countryResponse.getGini());
+        country.setTimezones(countryResponse.getTimezones());
+        country.setBorders(countryResponse.getBorders());
+        country.setNativeName(countryResponse.getNativeName());
+        country.setNumericCode(countryResponse.getNumericCode());
+        country.setFlag(countryResponse.getFlag());
+        country.setCioc(countryResponse.getCioc());
+        country.setCurrencies(getCurrencyList(countryResponse.getCurrencies()));
+        country.setLanguages(getLanguageList(countryResponse.getLanguages()));
+        country.setTranslations(getTranslationList(countryResponse.getTranslations()));
+        country.setRegionalBlocs(getRegionalBlockList(countryResponse.getRegionalBlocs()));
+        return country;
+    }
+
+    public List<Currency> getCurrencyList(List<CurrencyResponse> currencyResponses) {
         List<Currency> currencies = new ArrayList<>();
         for (CurrencyResponse currencyResponse : currencyResponses) {
             Currency currency = new Currency();
@@ -85,7 +119,7 @@ public class CountryRepositoryImpl implements CountryRepository {
         return currencies;
     }
 
-    public List<Language> getLanguages(List<LanguageResponse> languageResponses) {
+    public List<Language> getLanguageList(List<LanguageResponse> languageResponses) {
         List<Language> languages = new ArrayList<>();
         for (LanguageResponse languageResponse : languageResponses) {
             Language language = new Language();
@@ -98,7 +132,7 @@ public class CountryRepositoryImpl implements CountryRepository {
         return languages;
     }
 
-    public Translation getTranslations(TranslationResponse translationResponses) {
+    public Translation getTranslationList(TranslationResponse translationResponses) {
         Translation translation = new Translation();
         translation.setDe(translationResponses.getDe());
         translation.setEs(translationResponses.getEs());
@@ -110,7 +144,7 @@ public class CountryRepositoryImpl implements CountryRepository {
         return translation;
     }
 
-    public List<RegionalBlock> getRegionalBlocks(List<RegionalBlockResponse> regionalBlockResponses) {
+    public List<RegionalBlock> getRegionalBlockList(List<RegionalBlockResponse> regionalBlockResponses) {
         List<RegionalBlock> regionalBlocks = new ArrayList<>();
         for (RegionalBlockResponse regionalBlockResponse : regionalBlockResponses) {
             RegionalBlock regionalBlock = new RegionalBlock();
@@ -121,16 +155,5 @@ public class CountryRepositoryImpl implements CountryRepository {
             regionalBlocks.add(regionalBlock);
         }
         return regionalBlocks;
-    }
-
-    @Override
-    public Observable<List<Country>> getCountryGroupList(String field, String fieldValue) {
-        return restService.getCountryGroupList(field, fieldValue);
-    }
-
-    @Override
-    public Observable<Country> getCountry(String alpha3Code) {
-
-        return restService.getCountry(alpha3Code);
     }
 }

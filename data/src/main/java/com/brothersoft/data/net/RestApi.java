@@ -30,8 +30,8 @@ public interface RestApi {
     Observable<List<CountryResponse>> getAllCountries();
 
     @GET("{field}/{fieldValue}")
-    Observable<List<Country>> getCountryGroupList(@Path("field") String field, @Path("fieldValue") String fieldValue);
+    Observable<List<CountryResponse>> getCountryGroupList(@Path("field") String field, @Path("fieldValue") String fieldValue);
 
     @GET("alpha/{alpha3Code}")
-    Observable<Country> getCountry(@Path("alpha3Code") String name);
+    Observable<CountryResponse> getCountry(@Path("alpha3Code") String name);
 }

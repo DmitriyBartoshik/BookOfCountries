@@ -1,6 +1,8 @@
 package com.brothersoft.data.entity.response;
 
-public class TranslationResponse {
+import com.brothersoft.data.entity.DataModel;
+
+public class TranslationResponse implements DataModel {
     private String de;
     private String es;
     private String fr;

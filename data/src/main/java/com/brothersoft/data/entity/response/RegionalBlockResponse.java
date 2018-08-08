@@ -1,8 +1,10 @@
 package com.brothersoft.data.entity.response;
 
+import com.brothersoft.data.entity.DataModel;
+
 import java.util.List;
 
-public class RegionalBlockResponse {
+public class RegionalBlockResponse implements DataModel {
     private String acronym;
     private String name;
     private List<String> otherAcronyms;

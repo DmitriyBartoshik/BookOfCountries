@@ -65,12 +65,12 @@ public class RestService {
                 .getAllCountries();
 //                .compose(errorParserTransformer.<List<CountryResponse>, HttpError>parseHttpError());
     }
-    public Observable<List<Country>> getCountryGroupList(String field,String fieldValue) {
+    public Observable<List<CountryResponse>> getCountryGroupList(String field,String fieldValue) {
         return restApi
                 .getCountryGroupList(field,fieldValue);
     }
 
-    public Observable<Country> getCountry(String alpha3Code) {
+    public Observable<CountryResponse> getCountry(String alpha3Code) {
         return restApi
                 .getCountry(alpha3Code);
 //                .compose(errorParserTransformer.<UserResponse, HttpError>parseHttpError());
