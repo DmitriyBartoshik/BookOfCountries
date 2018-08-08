@@ -1,6 +1,6 @@
-package com.brothersoft.domain.entity;
+package com.brothersoft.data.entity.response;
 
-public class Translation {
+public class TranslationResponse {
     private String de;
     private String es;
     private String fr;
@@ -35,33 +35,5 @@ public class Translation {
 
     public String getPt() {
         return pt;
-    }
-
-    public void setDe(String de) {
-        this.de = de;
-    }
-
-    public void setEs(String es) {
-        this.es = es;
-    }
-
-    public void setFr(String fr) {
-        this.fr = fr;
-    }
-
-    public void setJa(String ja) {
-        this.ja = ja;
-    }
-
-    public void setIt(String it) {
-        this.it = it;
-    }
-
-    public void setBr(String br) {
-        this.br = br;
-    }
-
-    public void setPt(String pt) {
-        this.pt = pt;
     }
 }

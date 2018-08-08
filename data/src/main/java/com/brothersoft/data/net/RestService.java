@@ -3,6 +3,7 @@ package com.brothersoft.data.net;
 import android.util.Log;
 
 import com.brothersoft.data.entity.HttpError;
+import com.brothersoft.data.entity.response.CountryResponse;
 import com.brothersoft.domain.entity.Country;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -59,20 +60,19 @@ public class RestService {
         errorParserTransformer = new ErrorParserTransformer(gson);
     }
 
-    public Observable<List<Country>> getAllCountries() {
+    public Observable<List<CountryResponse>> getAllCountries() {
         return restApi
                 .getAllCountries();
 //                .compose(errorParserTransformer.<List<CountryResponse>, HttpError>parseHttpError());
+    }
+    public Observable<List<Country>> getCountryGroupList(String field,String fieldValue) {
+        return restApi
+                .getCountryGroupList(field,fieldValue);
     }
 
     public Observable<Country> getCountry(String alpha3Code) {
         return restApi
                 .getCountry(alpha3Code);
 //                .compose(errorParserTransformer.<UserResponse, HttpError>parseHttpError());
-    }
-
-    public Observable<List<Country>> getCountryGroupList(String field,String fieldValue) {
-        return restApi
-                .getCountryGroupList(field,fieldValue);
     }
 }

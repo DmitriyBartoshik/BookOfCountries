@@ -1,5 +1,6 @@
 package com.brothersoft.data.net;
 
+import com.brothersoft.data.entity.response.CountryResponse;
 import com.brothersoft.domain.entity.Country;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public interface RestApi {
 //    Completable deleteUser(@Path("id") String id);
 
     @GET("all")
-    Observable<List<Country>> getAllCountries();
+    Observable<List<CountryResponse>> getAllCountries();
 
     @GET("{field}/{fieldValue}")
     Observable<List<Country>> getCountryGroupList(@Path("field") String field, @Path("fieldValue") String fieldValue);

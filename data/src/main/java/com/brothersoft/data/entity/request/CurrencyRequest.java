@@ -1,21 +1,9 @@
-package com.brothersoft.domain.entity;
+package com.brothersoft.data.entity.request;
 
-public class Currency implements DomainModel {
+public class CurrencyRequest {
     private String code;
     private String name;
     private String symbol;
-
-    public String getCode() {
-        return code;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
 
     public void setCode(String code) {
         this.code = code;
