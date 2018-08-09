@@ -8,6 +8,7 @@ import com.brothersoft.bookofcountries.presentation.base.recycler.ClickedItemMod
 import com.brothersoft.domain.entity.Country;
 import com.brothersoft.domain.entity.Currency;
 import com.brothersoft.domain.entity.Language;
+import com.brothersoft.domain.entity.RegionalBlock;
 import com.brothersoft.domain.usecases.GetCountryUseCase;
 
 import javax.inject.Inject;
@@ -24,6 +25,7 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
 
     public LanguageListAdapter languageListAdapter = new LanguageListAdapter();
     public CurrencyListAdapter currencyListAdapter = new CurrencyListAdapter();
+    public RegionalBlockListAdapter regionalBlockListAdapter=new RegionalBlockListAdapter();
 
     @Inject
     public GetCountryUseCase countryUseCase;
@@ -36,6 +38,7 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
     public CountryViewModel() {
         languageClickObserver();
         currencyClickObserver();
+        regionalBlockClickObserver();
     }
 
     public void getCountry(String name) {
@@ -49,6 +52,7 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
             public void onNext(Country country) {
                 languageListAdapter.setItems(country.getLanguages());
                 currencyListAdapter.setItems(country.getCurrencies());
+                regionalBlockListAdapter.setItems(country.getRegionalBlocs());
                 setCountryField(country);
             }
 
@@ -104,6 +108,32 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
                 if (clickedItemModel.getEntity() instanceof Currency) {
                     String currency = ((Currency) clickedItemModel.getEntity()).getCode();
                     router.goToCountryGroupList("currency", currency);
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+    public void regionalBlockClickObserver(){
+        regionalBlockListAdapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(ClickedItemModel clickedItemModel) {
+                if (clickedItemModel.getEntity() instanceof RegionalBlock) {
+                    String regionalBlock = ((RegionalBlock) clickedItemModel.getEntity()).getAcronym();
+                    router.goToCountryGroupList("regionalbloc", regionalBlock);
                 }
             }
 

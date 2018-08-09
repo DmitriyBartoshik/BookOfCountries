@@ -47,13 +47,17 @@ public class CountryActivity extends BaseMvvmActivity<CountryViewModel,
         if (alpha3Code != null) {
             viewModel.getCountry(alpha3Code);
         }
+        setRecyclerViews();
+    }
+    public void setRecyclerViews(){
         binding.countryLanguages.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         binding.countryLanguages.setAdapter(viewModel.languageListAdapter);
-        binding.countryLanguages.setHasFixedSize(true);
 
         binding.countryCurrencies.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         binding.countryCurrencies.setAdapter(viewModel.currencyListAdapter);
-        binding.countryCurrencies.setHasFixedSize(true);
+
+        binding.countryBlocks.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        binding.countryBlocks.setAdapter(viewModel.regionalBlockListAdapter);
     }
 }
 
