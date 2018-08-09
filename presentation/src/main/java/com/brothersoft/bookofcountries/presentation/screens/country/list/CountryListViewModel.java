@@ -1,7 +1,4 @@
 package com.brothersoft.bookofcountries.presentation.screens.country.list;
-
-import android.util.Log;
-
 import com.brothersoft.bookofcountries.app.App;
 import com.brothersoft.bookofcountries.presentation.base.BaseViewModel;
 import com.brothersoft.bookofcountries.presentation.base.recycler.ClickedItemModel;
@@ -21,7 +18,6 @@ public class CountryListViewModel extends BaseViewModel<CountryListRouter> {
 
     @Inject
     public GetListCountryUseCase listCountryUseCase;
-
 
     @Override
     protected void runInject() {
@@ -56,7 +52,8 @@ public class CountryListViewModel extends BaseViewModel<CountryListRouter> {
             }
         });
     }
-    public void adapterClickObserver(){
+
+    public void adapterClickObserver() {
         adapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
             @Override
             public void onSubscribe(Disposable d) {

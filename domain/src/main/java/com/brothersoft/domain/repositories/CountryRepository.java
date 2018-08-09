@@ -15,6 +15,4 @@ public interface CountryRepository {
     Observable<List<Country>> getCountryGroupList(String field, String fieldValue);
 
     Observable<Country> getCountry(String alpha3Code);
-
-//    Observable<List<Country>> search(Search search);
 }

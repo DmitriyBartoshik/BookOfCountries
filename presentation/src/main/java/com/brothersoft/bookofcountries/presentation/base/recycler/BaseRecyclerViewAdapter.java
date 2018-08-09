@@ -3,6 +3,7 @@ package com.brothersoft.bookofcountries.presentation.base.recycler;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Filterable;
 
 import com.brothersoft.domain.entity.DomainModel;
 
