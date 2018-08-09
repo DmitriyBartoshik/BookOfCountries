@@ -19,7 +19,6 @@ public class App extends Application {
 
         appComponent = DaggerAppComponent
                 .builder()
-                //FIXME Поменять на другой вариант, что бы был не устаревший
                 .appModule(new AppModule(this))
                 .build();
     }

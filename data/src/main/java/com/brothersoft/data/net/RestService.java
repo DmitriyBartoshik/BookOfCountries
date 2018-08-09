@@ -62,17 +62,19 @@ public class RestService {
 
     public Observable<List<CountryResponse>> getAllCountries() {
         return restApi
-                .getAllCountries();
-//                .compose(errorParserTransformer.<List<CountryResponse>, HttpError>parseHttpError());
+                .getAllCountries()
+                .compose(errorParserTransformer.<List<CountryResponse>, HttpError>parseHttpError());
     }
-    public Observable<List<CountryResponse>> getCountryGroupList(String field,String fieldValue) {
+
+    public Observable<List<CountryResponse>> getCountryGroupList(String field, String fieldValue) {
         return restApi
-                .getCountryGroupList(field,fieldValue);
+                .getCountryGroupList(field, fieldValue)
+                .compose(errorParserTransformer.<List<CountryResponse>, HttpError>parseHttpError());
     }
 
     public Observable<CountryResponse> getCountry(String alpha3Code) {
         return restApi
-                .getCountry(alpha3Code);
-//                .compose(errorParserTransformer.<UserResponse, HttpError>parseHttpError());
+                .getCountry(alpha3Code)
+                .compose(errorParserTransformer.<CountryResponse, HttpError>parseHttpError());
     }
 }
