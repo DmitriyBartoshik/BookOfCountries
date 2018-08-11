@@ -47,7 +47,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:onClick="@{()->viewModel.goToCapital()}">
 
                 <TextView
                     android:id="@+id/text_capital"
@@ -68,7 +69,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{()->viewModel.openRegionsCountries()}"
+                android:onClick="@{()->viewModel.goToRegionsCountries()}"
                 android:orientation="horizontal">
 
                 <TextView

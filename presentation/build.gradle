@@ -28,9 +28,8 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$supportVersion"
     implementation "com.android.support:cardview-v7:$supportVersion"
     implementation "com.android.support:design:$supportVersion"
-
-    //Android SVG Loader
-    implementation "com.github.ar-android:AndroidSvgLoader:$svgLoader"
+    implementation "com.github.ar-android:AndroidSvgLoader:$svgLoaderVersion"
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
 
     //Rx
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"

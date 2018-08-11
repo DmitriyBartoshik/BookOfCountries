@@ -7,14 +7,13 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.brothersoft.bookofcountries.R;
 import com.brothersoft.bookofcountries.databinding.ActivityCountryListBinding;
 import com.brothersoft.bookofcountries.presentation.base.BaseMvvmActivity;
-import com.brothersoft.domain.entity.Country;
+import com.brothersoft.domain.entity.country.Country;
 
 import java.util.ArrayList;
 import java.util.List;

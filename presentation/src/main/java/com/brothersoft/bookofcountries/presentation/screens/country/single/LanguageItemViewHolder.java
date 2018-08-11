@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 
 import com.brothersoft.bookofcountries.databinding.ItemLanguageBinding;
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewHolder;
-import com.brothersoft.domain.entity.Language;
+import com.brothersoft.domain.entity.country.Language;
 
 public class LanguageItemViewHolder  extends BaseItemViewHolder<Language, LanguageItemViewModel, ItemLanguageBinding> {
     public static LanguageItemViewHolder languageItemViewHolder;

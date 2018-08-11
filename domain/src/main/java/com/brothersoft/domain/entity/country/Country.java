@@ -1,8 +1,10 @@
-package com.brothersoft.domain.entity;
+package com.brothersoft.domain.entity.country;
+
+import com.brothersoft.domain.entity.DomainModel;
 
 import java.util.List;
 
-public class Country implements DomainModel{
+public class Country implements DomainModel {
     private String name;
     private List<String> topLevelDomain;
     private String alpha2Code;

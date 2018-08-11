@@ -2,14 +2,10 @@ package com.brothersoft.bookofcountries.presentation.screens.country.list;
 
 import android.support.annotation.NonNull;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewHolder;
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseRecyclerViewAdapter;
-import com.brothersoft.domain.entity.Country;
-
-import java.util.List;
+import com.brothersoft.domain.entity.country.Country;
 
 
 public class CountryListAdapter extends BaseRecyclerViewAdapter<Country, CountryItemViewModel> {

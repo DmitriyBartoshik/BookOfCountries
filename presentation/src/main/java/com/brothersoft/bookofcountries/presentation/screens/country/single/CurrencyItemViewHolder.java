@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import com.brothersoft.bookofcountries.databinding.ItemCurrencyBinding;
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewHolder;
-import com.brothersoft.domain.entity.Currency;
+import com.brothersoft.domain.entity.country.Currency;
 
 
 public class CurrencyItemViewHolder  extends BaseItemViewHolder<Currency, CurrencyItemViewModel, ItemCurrencyBinding> {

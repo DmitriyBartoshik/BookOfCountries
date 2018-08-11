@@ -1,4 +1,6 @@
-package com.brothersoft.domain.entity;
+package com.brothersoft.domain.entity.country;
+
+import com.brothersoft.domain.entity.DomainModel;
 
 public class Language implements DomainModel {
     private String iso639_1;

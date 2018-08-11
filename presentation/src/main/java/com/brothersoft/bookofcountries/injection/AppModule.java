@@ -4,9 +4,12 @@ import android.content.Context;
 
 import com.brothersoft.bookofcountries.executor.UIThread;
 import com.brothersoft.data.net.RestService;
+import com.brothersoft.data.net.WeatherRestService;
 import com.brothersoft.data.repositories.CountryRepositoryImpl;
+import com.brothersoft.data.repositories.WeatherRepositoryImpl;
 import com.brothersoft.domain.executors.PostExecutionThread;
 import com.brothersoft.domain.repositories.CountryRepository;
+import com.brothersoft.domain.repositories.WeatherRepository;
 
 import javax.inject.Singleton;
 
@@ -30,6 +33,11 @@ public class AppModule {
     @Provides
     public static CountryRepository provideCountryRepository(CountryRepositoryImpl countryRepository) {
         return new CountryRepositoryImpl(new RestService());
+    }
+
+    @Provides
+    public static WeatherRepository provideWeatherRepository(WeatherRepositoryImpl weatherRepository) {
+        return new WeatherRepositoryImpl(new WeatherRestService());
     }
 
     @Singleton

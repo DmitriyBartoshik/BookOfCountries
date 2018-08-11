@@ -4,8 +4,8 @@ import com.brothersoft.bookofcountries.app.App;
 import com.brothersoft.bookofcountries.presentation.base.BaseViewModel;
 import com.brothersoft.bookofcountries.presentation.base.recycler.ClickedItemModel;
 import com.brothersoft.bookofcountries.presentation.screens.country.list.CountryListAdapter;
-import com.brothersoft.domain.entity.Country;
-import com.brothersoft.domain.usecases.GetCountryGroupUseCase;
+import com.brothersoft.domain.entity.country.Country;
+import com.brothersoft.domain.usecases.countryusecases.GetCountryGroupUseCase;
 
 import java.util.List;
 

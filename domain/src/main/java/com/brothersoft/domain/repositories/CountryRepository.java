@@ -1,11 +1,10 @@
 package com.brothersoft.domain.repositories;
 
-import com.brothersoft.domain.entity.Country;
+import com.brothersoft.domain.entity.country.Country;
 
 
 import java.util.List;
 
-import io.reactivex.Completable;
 import io.reactivex.Observable;
 
 public interface CountryRepository {

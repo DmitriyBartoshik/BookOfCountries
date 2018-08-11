@@ -1,14 +1,12 @@
 package com.brothersoft.data.net;
 
 import com.brothersoft.data.entity.response.CountryResponse;
-import com.brothersoft.domain.entity.Country;
 
 import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface RestApi {
 

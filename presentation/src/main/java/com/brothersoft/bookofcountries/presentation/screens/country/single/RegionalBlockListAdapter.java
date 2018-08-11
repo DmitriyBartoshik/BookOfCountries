@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewHolder;
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseRecyclerViewAdapter;
-import com.brothersoft.domain.entity.RegionalBlock;
+import com.brothersoft.domain.entity.country.RegionalBlock;
 
 public class RegionalBlockListAdapter extends BaseRecyclerViewAdapter<RegionalBlock, RegionalBlockItemViewModel> {
     @NonNull

@@ -3,7 +3,7 @@ package com.brothersoft.bookofcountries.presentation.screens.country.single;
 import android.databinding.ObservableField;
 
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewModel;
-import com.brothersoft.domain.entity.RegionalBlock;
+import com.brothersoft.domain.entity.country.RegionalBlock;
 
 public class RegionalBlockItemViewModel extends BaseItemViewModel<RegionalBlock> {
 

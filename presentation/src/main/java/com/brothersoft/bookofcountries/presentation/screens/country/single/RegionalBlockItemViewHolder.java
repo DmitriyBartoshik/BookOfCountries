@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 
 import com.brothersoft.bookofcountries.databinding.ItemRegionalBlockBinding;
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewHolder;
-import com.brothersoft.domain.entity.RegionalBlock;
+import com.brothersoft.domain.entity.country.RegionalBlock;
 
 public class RegionalBlockItemViewHolder extends BaseItemViewHolder<RegionalBlock, RegionalBlockItemViewModel, ItemRegionalBlockBinding> {
     public static RegionalBlockItemViewHolder regionalBlockItemViewHolder;

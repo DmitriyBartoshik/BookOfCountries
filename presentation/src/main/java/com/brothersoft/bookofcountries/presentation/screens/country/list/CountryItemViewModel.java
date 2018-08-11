@@ -3,7 +3,7 @@ package com.brothersoft.bookofcountries.presentation.screens.country.list;
 import android.databinding.ObservableField;
 
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewModel;
-import com.brothersoft.domain.entity.Country;
+import com.brothersoft.domain.entity.country.Country;
 
 public class CountryItemViewModel extends BaseItemViewModel<Country> {
     public ObservableField<String> name = new ObservableField<>("");

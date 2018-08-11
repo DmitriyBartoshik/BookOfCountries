@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewHolder;
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseRecyclerViewAdapter;
-import com.brothersoft.domain.entity.Currency;
+import com.brothersoft.domain.entity.country.Currency;
 
 public class CurrencyListAdapter  extends BaseRecyclerViewAdapter<Currency, CurrencyItemViewModel> {
     @NonNull

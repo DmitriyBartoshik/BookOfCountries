@@ -5,11 +5,11 @@ import android.databinding.ObservableField;
 import com.brothersoft.bookofcountries.app.App;
 import com.brothersoft.bookofcountries.presentation.base.BaseViewModel;
 import com.brothersoft.bookofcountries.presentation.base.recycler.ClickedItemModel;
-import com.brothersoft.domain.entity.Country;
-import com.brothersoft.domain.entity.Currency;
-import com.brothersoft.domain.entity.Language;
-import com.brothersoft.domain.entity.RegionalBlock;
-import com.brothersoft.domain.usecases.GetCountryUseCase;
+import com.brothersoft.domain.entity.country.Country;
+import com.brothersoft.domain.entity.country.Currency;
+import com.brothersoft.domain.entity.country.Language;
+import com.brothersoft.domain.entity.country.RegionalBlock;
+import com.brothersoft.domain.usecases.countryusecases.GetCountryUseCase;
 
 import javax.inject.Inject;
 
@@ -156,8 +156,12 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
         this.flag.set(country.getFlag());
     }
 
-    public void openRegionsCountries() {
+    public void goToRegionsCountries() {
         String focusRegion = region.get();
         router.goToCountryGroupList("region", focusRegion);
+    }
+    public void goToCapital(){
+        String cap=capital.get();
+        router.goToCapital(cap);
     }
 }

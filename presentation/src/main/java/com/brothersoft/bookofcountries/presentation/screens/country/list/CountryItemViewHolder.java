@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 
 import com.brothersoft.bookofcountries.databinding.ItemCountryBinding;
 import com.brothersoft.bookofcountries.presentation.base.recycler.BaseItemViewHolder;
-import com.brothersoft.domain.entity.Country;
+import com.brothersoft.domain.entity.country.Country;
 
 public class CountryItemViewHolder extends BaseItemViewHolder<Country, CountryItemViewModel, ItemCountryBinding> {
     public static CountryItemViewHolder countryItemViewHolder;

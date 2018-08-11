@@ -1,4 +1,4 @@
-package com.brothersoft.domain.entity;
+package com.brothersoft.domain.entity.country;
 
 public class Translation {
     private String de;

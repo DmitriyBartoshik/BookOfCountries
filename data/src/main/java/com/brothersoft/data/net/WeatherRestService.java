@@ -1,11 +1,10 @@
 package com.brothersoft.data.net;
 
 import com.brothersoft.data.entity.HttpError;
-import com.brothersoft.data.entity.response.CountryResponse;
+import com.brothersoft.domain.entity.weather.CapitalWeather;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
@@ -19,15 +18,15 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 @Singleton
-public class RestService {
-    private RestApi restApi;
+public class WeatherRestService {
+    private WeatherRestApi weatherRestApi;
     private Gson gson;
-    private static final String COUNTRY_REQUEST_URL = "https://restcountries.eu/rest/v2/";
+    private static final String WEATHER_REQUEST_URL = "http://api.openweathermap.org/data/2.5/";
+    private static final String WEATHER_API_KEY="ff8afdc61e30c5131edcce5186b5850e";
     private ErrorParserTransformer errorParserTransformer;
 
-
     @Inject
-    public RestService() {
+    public WeatherRestService() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
@@ -42,33 +41,25 @@ public class RestService {
         gson = new GsonBuilder()
                 .create();
 
-        this.restApi = new Retrofit
+        this.weatherRestApi = new Retrofit
                 .Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .baseUrl(COUNTRY_REQUEST_URL)
+                .baseUrl(WEATHER_REQUEST_URL)
                 .client(okHttpClient)
                 .build()
-                .create(RestApi.class);
+                .create(WeatherRestApi.class);
 
         errorParserTransformer = new ErrorParserTransformer(gson);
     }
 
-    public Observable<List<CountryResponse>> getAllCountries() {
-        return restApi
-                .getAllCountries()
-                .compose(errorParserTransformer.<List<CountryResponse>, HttpError>parseHttpError());
+    public Observable<CapitalWeather> getCapitalWeather(String capital) {
+        return weatherRestApi.getCapitalWeather(capital,WEATHER_API_KEY)
+                 .compose(errorParserTransformer.<CapitalWeather, HttpError>parseHttpError());
+
     }
 
-    public Observable<List<CountryResponse>> getCountryGroupList(String field, String fieldValue) {
-        return restApi
-                .getCountryGroupList(field, fieldValue)
-                .compose(errorParserTransformer.<List<CountryResponse>, HttpError>parseHttpError());
-    }
 
-    public Observable<CountryResponse> getCountry(String alpha3Code) {
-        return restApi
-                .getCountry(alpha3Code)
-                .compose(errorParserTransformer.<CountryResponse, HttpError>parseHttpError());
-    }
 }
+
+

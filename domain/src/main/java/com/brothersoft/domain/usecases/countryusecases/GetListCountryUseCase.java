@@ -1,10 +1,9 @@
-package com.brothersoft.domain.usecases;
+package com.brothersoft.domain.usecases.countryusecases;
 
-import android.util.Log;
-
-import com.brothersoft.domain.entity.Country;
+import com.brothersoft.domain.entity.country.Country;
 import com.brothersoft.domain.executors.PostExecutionThread;
 import com.brothersoft.domain.repositories.CountryRepository;
+import com.brothersoft.domain.usecases.BaseUseCase;
 
 import java.util.List;
 
@@ -12,7 +11,7 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 
-public class GetListCountryUseCase extends BaseUseCase{
+public class GetListCountryUseCase extends BaseUseCase {
     private CountryRepository countryRepository;
 
     @Inject

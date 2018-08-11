@@ -1,8 +1,9 @@
-package com.brothersoft.domain.usecases;
+package com.brothersoft.domain.usecases.countryusecases;
 
-import com.brothersoft.domain.entity.Country;
+import com.brothersoft.domain.entity.country.Country;
 import com.brothersoft.domain.executors.PostExecutionThread;
 import com.brothersoft.domain.repositories.CountryRepository;
+import com.brothersoft.domain.usecases.BaseUseCase;
 
 import javax.inject.Inject;
 

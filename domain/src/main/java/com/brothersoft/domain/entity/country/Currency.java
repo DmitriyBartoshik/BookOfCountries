@@ -1,4 +1,6 @@
-package com.brothersoft.domain.entity;
+package com.brothersoft.domain.entity.country;
+
+import com.brothersoft.domain.entity.DomainModel;
 
 public class Currency implements DomainModel {
     private String code;

@@ -1,8 +1,10 @@
-package com.brothersoft.domain.entity;
+package com.brothersoft.domain.entity.country;
+
+import com.brothersoft.domain.entity.DomainModel;
 
 import java.util.List;
 
-public class RegionalBlock implements DomainModel{
+public class RegionalBlock implements DomainModel {
     private String acronym;
     private String name;
     private List<String> otherAcronyms;
