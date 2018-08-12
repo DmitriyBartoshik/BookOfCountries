@@ -22,6 +22,13 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
     public ObservableField<String> capital = new ObservableField<String>();
     public ObservableField<String> region = new ObservableField<String>();
     public ObservableField<String> flag = new ObservableField<>("");
+    public ObservableField<String> population = new ObservableField<String>();
+    public ObservableField<String> area = new ObservableField<String>();
+    public ObservableField<String> callingCode = new ObservableField<String>();
+    public ObservableField<String> domain = new ObservableField<String>();
+    public ObservableField<String> timeZone = new ObservableField<String>();
+
+
 
     public LanguageListAdapter languageListAdapter = new LanguageListAdapter();
     public CurrencyListAdapter currencyListAdapter = new CurrencyListAdapter();
@@ -154,6 +161,11 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
         this.capital.set(country.getCapital());
         this.region.set(country.getRegion());
         this.flag.set(country.getFlag());
+        this.population.set(String.valueOf(country.getPopulation()));
+        this.area.set(String.valueOf(country.getArea()));
+        this.callingCode.set("+"+country.getCallingCodes().get(0));
+        this.domain.set(country.getTopLevelDomain().get(0));
+        this.timeZone.set(country.getTimezones().get(0));
     }
 
     public void goToRegionsCountries() {

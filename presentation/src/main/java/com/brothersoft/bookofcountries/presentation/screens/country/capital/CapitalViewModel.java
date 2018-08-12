@@ -8,6 +8,10 @@ import com.brothersoft.bookofcountries.presentation.base.BaseViewModel;
 import com.brothersoft.domain.entity.weather.CapitalWeather;
 import com.brothersoft.domain.usecases.weatherusecases.GetCapitalWeatherUseCase;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.inject.Inject;
 
 import io.reactivex.Observer;
@@ -24,8 +28,6 @@ public class CapitalViewModel extends BaseViewModel<CapitalRouter> {
     public ObservableField<String> humidity = new ObservableField<>();
     public ObservableField<String> sunrise = new ObservableField<>();
     public ObservableField<String> sunset = new ObservableField<>();
-
-
 
 
     @Inject
@@ -74,9 +76,16 @@ public class CapitalViewModel extends BaseViewModel<CapitalRouter> {
         capital.set(capitalWeather.getName());
         country.set(capitalWeather.getSys().getCountry());
         clouds.set(capitalWeather.getWeather().get(0).getDescription());
-        temp.set(String.valueOf((int) capitalWeather.getMain().getTemp()-273)+ " \u2103");
+        temp.set(String.valueOf((int) capitalWeather.getMain().getTemp() - 273) + " \u2103");
         windSpeed.set(String.valueOf(capitalWeather.getWind().getSpeed()));
         pressure.set(String.valueOf(capitalWeather.getMain().getPressure()));
         humidity.set(String.valueOf(capitalWeather.getMain().getHumidity()));
+
+        Date date = new Date(capitalWeather.getSys().getSunrise());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        sunrise.set(dateFormat.format(date));
+        date = new Date(capitalWeather.getSys().getSunset());
+        dateFormat = new SimpleDateFormat("HH:mm");
+        sunset.set(dateFormat.format(date));
     }
 }
