@@ -68,7 +68,6 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
             @Override
             public void onError(Throwable e) {
                 router.showError(e);
-                router.finishActivity();
             }
 
             @Override

@@ -1,4 +1,5 @@
 package com.brothersoft.data.net;
+
 import com.brothersoft.domain.entity.error.Error;
 import com.brothersoft.domain.entity.error.ErrorType;
 import com.google.gson.Gson;
@@ -36,10 +37,8 @@ public class ErrorParserTransformer {
                                     HttpException httpException = (HttpException) throwable;
                                     String errorBody = httpException.response().errorBody().string();
                                     E httpError = gson.fromJson(errorBody,
-                                            new TypeToken<E>(){}.getType());
-
-                                    //тут проверить параметры в HttpError и решить что делать дальше
-
+                                            new TypeToken<E>() {
+                                            }.getType());
                                     error = new Error(httpError.getMessage(), ErrorType.SERVER_ERROR);
 
                                 } else if (throwable instanceof SocketTimeoutException) {
