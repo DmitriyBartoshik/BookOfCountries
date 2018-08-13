@@ -3,8 +3,8 @@ package com.brothersoft.bookofcountries.injection;
 import android.content.Context;
 
 import com.brothersoft.bookofcountries.executor.UIThread;
-import com.brothersoft.data.net.RestService;
-import com.brothersoft.data.net.WeatherRestService;
+import com.brothersoft.data.net.country.RestService;
+import com.brothersoft.data.net.weather.WeatherRestService;
 import com.brothersoft.data.repositories.CountryRepositoryImpl;
 import com.brothersoft.data.repositories.WeatherRepositoryImpl;
 import com.brothersoft.domain.executors.PostExecutionThread;

@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.brothersoft.bookofcountries.presentation.screens.country.single.CurrencyItemViewModel" />
+            type="com.brothersoft.bookofcountries.presentation.screens.country.single.items.currency.CurrencyItemViewModel" />
     </data>
     <TextView
         android:id="@+id/currency_code"

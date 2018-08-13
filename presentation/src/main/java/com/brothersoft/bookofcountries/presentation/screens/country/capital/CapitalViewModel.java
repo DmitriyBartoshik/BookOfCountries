@@ -6,9 +6,8 @@ import android.util.Log;
 import com.brothersoft.bookofcountries.app.App;
 import com.brothersoft.bookofcountries.presentation.base.BaseViewModel;
 import com.brothersoft.domain.entity.weather.CapitalWeather;
-import com.brothersoft.domain.usecases.weatherusecases.GetCapitalWeatherUseCase;
+import com.brothersoft.domain.usecases.weather.GetCapitalWeatherUseCase;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -80,10 +79,12 @@ public class CapitalViewModel extends BaseViewModel<CapitalRouter> {
         windSpeed.set(String.valueOf(capitalWeather.getWind().getSpeed()));
         pressure.set(String.valueOf(capitalWeather.getMain().getPressure()));
         humidity.set(String.valueOf(capitalWeather.getMain().getHumidity()));
+        long a = capitalWeather.getSys().getSunrise();
 
         Date date = new Date(capitalWeather.getSys().getSunrise());
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH;mm");
         sunrise.set(dateFormat.format(date));
+
         date = new Date(capitalWeather.getSys().getSunset());
         dateFormat = new SimpleDateFormat("HH:mm");
         sunset.set(dateFormat.format(date));

@@ -23,4 +23,20 @@ public class WeatherDescription implements DomainModel {
     public String getIcon() {
         return icon;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMain(String main) {
+        this.main = main;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 }

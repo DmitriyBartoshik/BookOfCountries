@@ -2,8 +2,9 @@ package com.brothersoft.bookofcountries.presentation.screens.country.list;
 import com.brothersoft.bookofcountries.app.App;
 import com.brothersoft.bookofcountries.presentation.base.BaseViewModel;
 import com.brothersoft.bookofcountries.presentation.base.recycler.ClickedItemModel;
+import com.brothersoft.bookofcountries.presentation.screens.country.list.items.country.CountryListAdapter;
 import com.brothersoft.domain.entity.country.Country;
-import com.brothersoft.domain.usecases.countryusecases.GetListCountryUseCase;
+import com.brothersoft.domain.usecases.country.GetListCountryUseCase;
 
 import java.util.List;
 

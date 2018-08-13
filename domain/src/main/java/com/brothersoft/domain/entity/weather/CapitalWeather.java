@@ -66,4 +66,53 @@ public class CapitalWeather implements DomainModel {
     public int getCod() {
         return cod;
     }
+
+    public void setCoord(Coordinate coord) {
+        this.coord = coord;
+    }
+
+    public void setWeather(List<WeatherDescription> weather) {
+        this.weather = weather;
+    }
+
+    public void setBase(String base) {
+        this.base = base;
+    }
+
+    public void setMain(WeatherData main) {
+        this.main = main;
+    }
+
+    public void setVisibility(int visibility) {
+        this.visibility = visibility;
+    }
+
+    public void setWind(Wind wind) {
+        this.wind = wind;
+    }
+
+    public void setClouds(Cloud clouds) {
+        this.clouds = clouds;
+    }
+
+    public void setDt(long dt) {
+        this.dt = dt;
+    }
+
+    public void setSys(SunData sys) {
+        this.sys = sys;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCod(int cod) {
+        this.cod = cod;
+    }
 }
+

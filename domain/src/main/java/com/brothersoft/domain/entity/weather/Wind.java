@@ -18,4 +18,16 @@ public class Wind implements DomainModel {
     public double getGust() {
         return gust;
     }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
+    public void setDeg(double deg) {
+        this.deg = deg;
+    }
+
+    public void setGust(double gust) {
+        this.gust = gust;
+    }
 }

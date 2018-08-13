@@ -4,11 +4,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.brothersoft.bookofcountries.R;
-import com.brothersoft.domain.entity.Error;
-
-import static com.brothersoft.domain.entity.ErrorType.INTERNET_IS_NOT_AVAILABLE;
-import static com.brothersoft.domain.entity.ErrorType.SERVER_ERROR;
-import static com.brothersoft.domain.entity.ErrorType.SERVER_IS_NOT_AVAILABLE;
+import com.brothersoft.domain.entity.error.Error;
 
 public class BaseRouter<A extends BaseActivity> {
 

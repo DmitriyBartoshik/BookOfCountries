@@ -5,11 +5,14 @@ import android.databinding.ObservableField;
 import com.brothersoft.bookofcountries.app.App;
 import com.brothersoft.bookofcountries.presentation.base.BaseViewModel;
 import com.brothersoft.bookofcountries.presentation.base.recycler.ClickedItemModel;
+import com.brothersoft.bookofcountries.presentation.screens.country.single.items.block.RegionalBlockListAdapter;
+import com.brothersoft.bookofcountries.presentation.screens.country.single.items.currency.CurrencyListAdapter;
+import com.brothersoft.bookofcountries.presentation.screens.country.single.items.language.LanguageListAdapter;
 import com.brothersoft.domain.entity.country.Country;
 import com.brothersoft.domain.entity.country.Currency;
 import com.brothersoft.domain.entity.country.Language;
 import com.brothersoft.domain.entity.country.RegionalBlock;
-import com.brothersoft.domain.usecases.countryusecases.GetCountryUseCase;
+import com.brothersoft.domain.usecases.country.GetCountryUseCase;
 
 import javax.inject.Inject;
 

@@ -1,6 +1,6 @@
 package com.brothersoft.data.net;
-import com.brothersoft.domain.entity.Error;
-import com.brothersoft.domain.entity.ErrorType;
+import com.brothersoft.domain.entity.error.Error;
+import com.brothersoft.domain.entity.error.ErrorType;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

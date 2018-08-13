@@ -8,4 +8,8 @@ public class Cloud implements DomainModel {
     public int getAll() {
         return all;
     }
+
+    public void setAll(int all) {
+        this.all = all;
+    }
 }

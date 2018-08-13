@@ -1,11 +1,11 @@
 package com.brothersoft.data.repositories;
 
-import com.brothersoft.data.entity.response.CountryResponse;
-import com.brothersoft.data.entity.response.CurrencyResponse;
-import com.brothersoft.data.entity.response.LanguageResponse;
-import com.brothersoft.data.entity.response.RegionalBlockResponse;
-import com.brothersoft.data.entity.response.TranslationResponse;
-import com.brothersoft.data.net.RestService;
+import com.brothersoft.data.entity.responses.country.CountryResponse;
+import com.brothersoft.data.entity.responses.country.CurrencyResponse;
+import com.brothersoft.data.entity.responses.country.LanguageResponse;
+import com.brothersoft.data.entity.responses.country.RegionalBlockResponse;
+import com.brothersoft.data.entity.responses.country.TranslationResponse;
+import com.brothersoft.data.net.country.RestService;
 import com.brothersoft.domain.entity.country.Country;
 import com.brothersoft.domain.entity.country.Currency;
 import com.brothersoft.domain.entity.country.Language;

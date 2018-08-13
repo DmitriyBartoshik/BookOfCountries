@@ -35,4 +35,28 @@ public class SunData implements DomainModel {
     public long getSunset() {
         return sunset;
     }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMessage(double message) {
+        this.message = message;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setSunrise(long sunrise) {
+        this.sunrise = sunrise;
+    }
+
+    public void setSunset(long sunset) {
+        this.sunset = sunset;
+    }
 }
