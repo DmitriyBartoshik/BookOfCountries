@@ -48,22 +48,12 @@ public class CountryGroupActivity extends BaseMvvmActivity<CountryGroupViewModel
         String fieldValue = getIntent().getExtras().getString(EXTRA_COUNTRY_FIELD_VALUES);
         viewModel.getCountryGroupList(field, fieldValue);
         settingsAdapter();
-        settingsBackround(field);
     }
 
     public void settingsAdapter() {
         binding.countryList.setLayoutManager(new LinearLayoutManager(this));
         binding.countryList.setAdapter(viewModel.adapter);
         binding.countryList.setHasFixedSize(true);
-    }
-
-    public void settingsBackround(String field) {
-        if (field.equals("lang")) {
-            binding.headerCountryGroup.setBackground(getDrawable(R.drawable.international_trade));
-        }
-        if (field.equals("currency")) {
-            binding.headerCountryGroup.setBackground(getDrawable(R.drawable.currency_header));
-        }
     }
 }
 
