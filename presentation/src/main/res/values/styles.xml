@@ -10,12 +10,14 @@
         <item name="android:fontFamily">@font/bradobrei</item>
     </style>
 
+    <!-- toolbar style -->
     <style name="Toolbar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="android:background">@drawable/green_effect</item>
     </style>
 
+    <!-- activity_country styles -->
     <style name="CountryActivityLayoutStyle" parent="AppTheme">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -30,6 +32,7 @@
         <item name="android:textSize">25sp</item>
     </style>
 
+    <!-- item_activities  styles -->
     <style name="BaseItemStyle" parent="AppTheme">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -38,14 +41,13 @@
         <item name="android:paddingRight">5dp</item>
     </style>
 
+    <style name="ItemStyle" parent="BaseItemStyle">
+        <item name="android:background">@drawable/green_effect</item>
+    </style>
 
     <style name="BorderItemStyle" parent="BaseItemStyle">
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:background">@drawable/green_effect_border</item>
-    </style>
-
-    <style name="ItemStyle" parent="BaseItemStyle">
-        <item name="android:background">@drawable/green_effect</item>
     </style>
 
 
@@ -72,11 +74,25 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">#111211</item>
     </style>
 
     <style name="TableRowTextViewStyle" parent="BaseCapitalTextViewStyle">
         <item name="android:textSize">15dp</item>
     </style>
 
+    <!-- activity_country_group style-->
+    <style name="CountryGroupLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CountryGroupTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">40sp</item>
+    </style>
 </resources>
 

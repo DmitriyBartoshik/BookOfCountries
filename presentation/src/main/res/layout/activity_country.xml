@@ -25,8 +25,8 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/ItemStyle"
                     android:id="@+id/country_name"
+                    style="@style/ItemStyle"
                     android:layout_gravity="center"
                     android:text="@{viewModel.name}"
                     android:textSize="40sp" />
@@ -50,14 +50,13 @@
                     android:onClick="@{()->viewModel.goToCapital()}">
 
                     <TextView
-                        style="@style/CountryActivityTextViewStyle"
                         android:id="@+id/text_capital"
-                        android:text="@string/capital"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/capital" />
 
                     <TextView
-                        style="@style/BorderItemStyle"
                         android:id="@+id/country_capital"
+                        style="@style/BorderItemStyle"
                         android:text="@{viewModel.capital}" />
                 </LinearLayout>
 
@@ -66,14 +65,13 @@
                     android:onClick="@{()->viewModel.goToRegionsCountries()}">
 
                     <TextView
-                        style="@style/CountryActivityTextViewStyle"
                         android:id="@+id/text_region"
-                        android:text="@string/region"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/region" />
 
                     <TextView
-                        style="@style/BorderItemStyle"
                         android:id="@+id/country_region"
+                        style="@style/BorderItemStyle"
                         android:text="@{viewModel.region}" />
 
                 </LinearLayout>
@@ -81,10 +79,9 @@
                 <LinearLayout style="@style/CountryActivityLayoutStyle">
 
                     <TextView
-                        style="@style/CountryActivityTextViewStyle"
                         android:id="@+id/text_language"
-                        android:text="@string/language"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/language" />
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/country_languages"
@@ -95,10 +92,9 @@
                 <LinearLayout style="@style/CountryActivityLayoutStyle">
 
                     <TextView
-                        style="@style/CountryActivityTextViewStyle"
                         android:id="@+id/text_currency"
-                        android:text="@string/currency"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/currency" />
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/country_currencies"
@@ -109,10 +105,9 @@
                 <LinearLayout style="@style/CountryActivityLayoutStyle">
 
                     <TextView
-                        style="@style/CountryActivityTextViewStyle"
                         android:id="@+id/text_block"
-                        android:text="@string/block"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/block" />
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/country_blocks"
@@ -123,10 +118,9 @@
                 <LinearLayout style="@style/CountryActivityLayoutStyle">
 
                     <TextView
-                        style="@style/CountryActivityTextViewStyle"
                         android:id="@+id/text_population"
-                        android:text="@string/population"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/population" />
 
                     <TextView
                         android:id="@+id/country_population"
@@ -137,10 +131,9 @@
                 <LinearLayout style="@style/CountryActivityLayoutStyle">
 
                     <TextView
-                        style="@style/CountryActivityTextViewStyle"
                         android:id="@+id/text_area"
-                        android:text="@string/area"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/area" />
 
                     <TextView
                         android:id="@+id/country_area"
@@ -151,10 +144,9 @@
                 <LinearLayout style="@style/CountryActivityLayoutStyle">
 
                     <TextView
-                        style="@style/CountryActivityTextViewStyle"
                         android:id="@+id/text_calling_code"
-                        android:text="@string/calling_code"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/calling_code" />
 
                     <TextView
                         android:id="@+id/country_calling_code"
@@ -165,10 +157,9 @@
                 <LinearLayout style="@style/CountryActivityLayoutStyle">
 
                     <TextView
-                        style="@style/CountryActivityTextViewStyle"
                         android:id="@+id/text_domain"
-                        android:text="@string/domain"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/domain" />
 
                     <TextView
                         android:id="@+id/country_domain"
@@ -179,10 +170,35 @@
                 <LinearLayout style="@style/CountryActivityLayoutStyle">
 
                     <TextView
+                        android:id="@+id/text_time_alpha2_code"
                         style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/alpha2code" />
+
+                    <TextView
+                        android:id="@+id/country_alpha2code"
+                        style="@style/ItemStyle"
+                        android:text="@{viewModel.alpha2Code}" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/CountryActivityLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/text_alpha3_code"
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/alpha3code" />
+
+                    <TextView
+                        android:id="@+id/country_alpha3code"
+                        style="@style/ItemStyle"
+                        android:text="@{viewModel.alpha3Code}" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/CountryActivityLayoutStyle">
+
+                    <TextView
                         android:id="@+id/text_time_zone"
-                        android:text="@string/time_zone"
-                        />
+                        style="@style/CountryActivityTextViewStyle"
+                        android:text="@string/time_zone" />
 
                     <TextView
                         android:id="@+id/country_time_zones"

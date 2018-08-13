@@ -20,7 +20,6 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 public class CountryViewModel extends BaseViewModel<CountryRouter> {
-
     public ObservableField<String> name = new ObservableField<String>();
     public ObservableField<String> capital = new ObservableField<String>();
     public ObservableField<String> region = new ObservableField<String>();
@@ -29,13 +28,13 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
     public ObservableField<String> area = new ObservableField<String>();
     public ObservableField<String> callingCode = new ObservableField<String>();
     public ObservableField<String> domain = new ObservableField<String>();
+    public ObservableField<String> alpha2Code = new ObservableField<String>();
+    public ObservableField<String> alpha3Code = new ObservableField<String>();
     public ObservableField<String> timeZone = new ObservableField<String>();
-
-
 
     public LanguageListAdapter languageListAdapter = new LanguageListAdapter();
     public CurrencyListAdapter currencyListAdapter = new CurrencyListAdapter();
-    public RegionalBlockListAdapter regionalBlockListAdapter=new RegionalBlockListAdapter();
+    public RegionalBlockListAdapter regionalBlockListAdapter = new RegionalBlockListAdapter();
 
     @Inject
     public GetCountryUseCase countryUseCase;
@@ -132,7 +131,8 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
             }
         });
     }
-    public void regionalBlockClickObserver(){
+
+    public void regionalBlockClickObserver() {
         regionalBlockListAdapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
             @Override
             public void onSubscribe(Disposable d) {
@@ -166,8 +166,10 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
         this.flag.set(country.getFlag());
         this.population.set(String.valueOf(country.getPopulation()));
         this.area.set(String.valueOf(country.getArea()));
-        this.callingCode.set("+"+country.getCallingCodes().get(0));
+        this.callingCode.set("+" + country.getCallingCodes().get(0));
         this.domain.set(country.getTopLevelDomain().get(0));
+        this.alpha2Code.set(country.getAlpha2Code());
+        this.alpha3Code.set(country.getAlpha3Code());
         this.timeZone.set(country.getTimezones().get(0));
     }
 
@@ -175,8 +177,9 @@ public class CountryViewModel extends BaseViewModel<CountryRouter> {
         String focusRegion = region.get();
         router.goToCountryGroupList("region", focusRegion);
     }
-    public void goToCapital(){
-        String cap=capital.get();
+
+    public void goToCapital() {
+        String cap = capital.get();
         router.goToCapital(cap);
     }
 }

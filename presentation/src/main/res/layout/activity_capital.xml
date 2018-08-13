@@ -75,7 +75,7 @@
 
                         <TextView
                             style="@style/TableRowTextViewStyle"
-                            android:text="wind speed" />
+                            android:text="@string/wind_speed" />
 
                         <TextView
                             style="@style/TableRowTextViewStyle"
@@ -91,7 +91,7 @@
 
                         <TextView
                             style="@style/TableRowTextViewStyle"
-                            android:text="pressure" />
+                            android:text="@string/pressure" />
 
                         <TextView
                             style="@style/TableRowTextViewStyle"
@@ -110,7 +110,7 @@
 
                         <TextView
                             style="@style/TableRowTextViewStyle"
-                            android:text="humidity" />
+                            android:text="@string/humidity" />
 
                         <TextView
                             style="@style/TableRowTextViewStyle"
@@ -139,7 +139,7 @@
                                 <TextView
                                     style="@style/TableRowTextViewStyle"
                                     android:layout_weight="1"
-                                    android:text="Sunrise"
+                                    android:text="@string/sunrise"
                                     />
 
                                 <TextView
@@ -158,7 +158,7 @@
                                 <TextView
                                     style="@style/TableRowTextViewStyle"
                                     android:layout_weight="1"
-                                    android:text="Sunset"
+                                    android:text="@string/sunset"
                                     />
 
                                 <TextView
