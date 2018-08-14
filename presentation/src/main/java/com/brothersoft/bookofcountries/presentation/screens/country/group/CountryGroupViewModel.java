@@ -47,7 +47,7 @@ public class CountryGroupViewModel extends BaseViewModel<CountryGroupRouter> {
 
             @Override
             public void onError(Throwable e) {
-
+                router.showError(e);
             }
 
             @Override

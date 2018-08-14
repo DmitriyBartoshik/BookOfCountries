@@ -5,7 +5,9 @@ import com.brothersoft.domain.entity.error.ErrorType;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.net.ConnectException;
 import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
@@ -35,20 +37,23 @@ public class ErrorParserTransformer {
                                 Error error;
                                 if (throwable instanceof HttpException) {
                                     HttpException httpException = (HttpException) throwable;
-                                    String errorBody = httpException.response().errorBody().string();
+                                    String errorBody = httpException.response().errorBody().toString();
                                     E httpError = gson.fromJson(errorBody,
                                             new TypeToken<E>() {
                                             }.getType());
-                                    error = new Error(httpError.getMessage(), ErrorType.SERVER_ERROR);
-
-                                } else if (throwable instanceof SocketTimeoutException) {
+                                    error = new Error(httpError.getMessage(),
+                                            ErrorType.SERVER_ERROR);
+                                } else if (throwable instanceof UnknownHostException) {
                                     error = new Error("Internet is not available",
                                             ErrorType.INTERNET_IS_NOT_AVAILABLE);
+                                } else if (throwable instanceof SocketTimeoutException
+                                        || throwable instanceof ConnectException) {
+                                    error = new Error("Server is not available",
+                                            ErrorType.SERVER_IS_NOT_AVAILABLE);
                                 } else {
                                     error = new Error("Unexpected error",
                                             ErrorType.UNEXPECTED_ERROR);
                                 }
-
                                 return Observable.error(error);
                             }
                         });

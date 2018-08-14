@@ -58,7 +58,7 @@ public class CapitalViewModel extends BaseViewModel<CapitalRouter> {
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.e("SSS", "ERROR!!!!!!!!!!!!!! " + e);
+                        router.showError(e);
                     }
 
                     @Override
